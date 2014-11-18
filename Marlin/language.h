@@ -36,7 +36,7 @@
 	#ifdef CUSTOM_MENDEL_NAME
 		#define MACHINE_NAME CUSTOM_MENDEL_NAME
 	#else
-		#define MACHINE_NAME "Kossel"
+		#define MACHINE_NAME "Mendel"
 	#endif
 	#define FIRMWARE_URL "http://www.mendel-parts.com"
 #endif
@@ -131,11 +131,7 @@
 	#define MSG_FILAMENTCHANGE "Change filament"
 	#define MSG_INIT_SDCARD "Init. SD-Card"	
 	#define MSG_CNG_SDCARD "Change SD-Card"
- 	#define MSG_E_BOWDEN_LENGTH "Extrude " STRINGIFY(BOWDEN_LENGTH) "mm"
- 	#define MSG_R_BOWDEN_LENGTH "Retract " STRINGIFY(BOWDEN_LENGTH) "mm"
-  #define MSG_PURGE_XMM "Purge " STRINGIFY(LCD_PURGE_LENGTH) "mm"
-	#define MSG_RETRACT_XMM "Retract " STRINGIFY(LCD_RETRACT_LENGTH) "mm"
-  
+
 // Serial Console Messages
 
 	#define MSG_Enqueing "enqueing \""
@@ -164,7 +160,7 @@
 	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
-	#define MSG_HEATING_COMPLETE "Printing..."
+	#define MSG_HEATING_COMPLETE "Heating done."
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Marlin V1; Sprinter/grbl mashup for gen6 FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) "\n"
