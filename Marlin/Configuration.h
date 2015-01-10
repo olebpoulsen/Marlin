@@ -18,7 +18,7 @@
 
 // This determines the communication speed of the printer
 // #define BAUDRATE 250000
-#define BAUDRATE 115200 // 250000 doesn't work in Linux
+#define BAUDRATE 250000 //115200 // 250000 doesn't work in Linux
 
 //// The following define selects which electronics board you have. Please choose the one that matches your setup
 // 10 = Gen7 custom (Alfons3 Version) "https://github.com/Alfons3/Generation_7_Electronics"
@@ -83,10 +83,11 @@
 #define DELTA_SEGMENTS_PER_SECOND 200
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 215.0 // mm (T3P3, default 215)
+//OBP
+#define DELTA_DIAGONAL_ROD 214.8 // mm (T3P3, default 215)
 
 // Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 145.1 // mm  (T3P3, default 145) //145.1 = redkossel
+#define DELTA_SMOOTH_ROD_OFFSET 145.0 // mm  (T3P3, default 145) //145.1 = redkossel
 
 // Horizontal offset of the universal joints on the end effector.
 #define DELTA_EFFECTOR_OFFSET 19.9 // mm (T3P3, default 19.9)
@@ -328,13 +329,14 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define Y_HOME_DIR 1
 #define Z_HOME_DIR 1
 
+//OBP Sætte til false for at kunne arbejde med Z offset M206 og derved nemt ændre Z0 højde
 #define min_software_endstops true // If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
-#define X_MAX_POS 85 // T3P3, default 90
-#define X_MIN_POS -85 // T3P3, default -90
-#define Y_MAX_POS 85 // T3P3, default 90
-#define Y_MIN_POS -85 // T3P3, default -90
+#define X_MAX_POS 90 // T3P3, default 90
+#define X_MIN_POS -90 // T3P3, default -90
+#define Y_MAX_POS 90 // T3P3, default 90
+#define Y_MIN_POS -90 // T3P3, default -90
 #define Z_MAX_POS MANUAL_Z_HOME_POS
 #define Z_MIN_POS 0
 
@@ -350,6 +352,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // For deltabots this means top and center of the cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
+// hvis nozzel ikke er tæt nok på plade så hæves tallet - før heatbed 246.65
 #define MANUAL_Z_HOME_POS 236.9 // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 22  // Distance between autolevel Z probing points, should be less than print surface radius/3.
@@ -358,12 +361,13 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
 #define HOMING_FEEDRATE {100*60, 100*60, 100*60, 0}  // set the homing speeds (mm/min) (derated from 9000 to 6000)
 
-#define Z_PROBE_OFFSET {1.2, 17.60, -4.80, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. // T3P3. defaults {0, 13, -7.15, 0 }
+//OBP skal hotend længere ned så skal tallet være større fx. -5.20
+#define Z_PROBE_OFFSET {-1.40, 15.00, -3.90, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. // T3P3. defaults {0, 13, -7.15, 0 }
 
 // default settings
-
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 80, 663} // T3P3 for 20T pulleys & RRP mini geared extruder
-#define DEFAULT_MAX_FEEDRATE          {1000, 1000, 1000, 800}    // (mm/sec) T3P3: defaults {200, 200, 200, 200} 
+//OBP målt sat til PLA - extruder hastigheder
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 80, 655} // T3P3 for 20T pulleys & RRP mini geared extruder
+#define DEFAULT_MAX_FEEDRATE          {200, 200, 200, 200}    // (mm/sec) T3P3: defaults {200, 200, 200, 200} 
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,9000,9000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
@@ -390,10 +394,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable eeprom support
- #define EEPROM_SETTINGS // T3P3 default is off during calibration. Turn on afterwards if preferred.
+#define EEPROM_SETTINGS // T3P3 default is off during calibration. Turn on afterwards if preferred.
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
- #define EEPROM_CHITCHAT // T3P3 default is off during calibration. Turn on afterwards if preferred.
+#define EEPROM_CHITCHAT // T3P3 default is off during calibration. Turn on afterwards if preferred.
 
  //Filament management (added by T3P3 based on https://github.com/lajos/Marlin/blob/tantillus/Marlin)
 #define EASY_LOAD					
