@@ -844,9 +844,9 @@ void retract_z_probe() {
   feedrate = homing_feedrate[X_AXIS];
   destination[Z_AXIS] = current_position[Z_AXIS] + 40; // T3P3 Kossel Mini 
   prepare_move_raw();
-
-  destination[X_AXIS] = -61;
-  destination[Y_AXIS] = 66;
+//OBP
+  destination[X_AXIS] = -57.10;
+  destination[Y_AXIS] = 65.30;
   destination[Z_AXIS] = 35;
   prepare_move_raw();
 
