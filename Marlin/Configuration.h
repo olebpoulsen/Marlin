@@ -86,7 +86,8 @@
 #define DELTA_DIAGONAL_ROD 214.8 // mm (T3P3, default 215)
 
 // Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 145.0 // mm  (T3P3, default 145) //145.1 = redkossel
+//OBP ændret ved heatbed kalibrering
+#define DELTA_SMOOTH_ROD_OFFSET 144.80 // mm  (T3P3, default 145) //145.1 = redkossel
 
 // Horizontal offset of the universal joints on the end effector.
 #define DELTA_EFFECTOR_OFFSET 19.9 // mm (T3P3, default 19.9)
@@ -351,8 +352,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // For deltabots this means top and center of the cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-//OBP-Z Z-justering
+//OBP-Z Z-OBP Z-justering
 // hvis nozzel ikke er tæt nok på plade så hæves tallet - før heatbed 246.65
+//hot bed:60 hotend:185 233.85
 #define MANUAL_Z_HOME_POS 233.85 // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 22  // Distance between autolevel Z probing points, should be less than print surface radius/3.
