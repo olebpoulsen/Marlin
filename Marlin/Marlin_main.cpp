@@ -842,11 +842,13 @@ void deploy_z_probe() {
 
 void retract_z_probe() {
   feedrate = homing_feedrate[X_AXIS];
+ //OBP ændret fra 40
   destination[Z_AXIS] = current_position[Z_AXIS] + 40; // T3P3 Kossel Mini 
   prepare_move_raw();
 //OBP
   destination[X_AXIS] = -57.10;
-  destination[Y_AXIS] = 65.30;
+//OBP centrum 65.30
+  destination[Y_AXIS] = 61.30;
   destination[Z_AXIS] = 35;
   prepare_move_raw();
 

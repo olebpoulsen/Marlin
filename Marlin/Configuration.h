@@ -353,7 +353,6 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
 // hvis nozzel ikke er tæt nok på plade så hæves tallet - før heatbed 246.65
-#define MANUAL_Z_HOME_POS 236.9 // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 22  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
