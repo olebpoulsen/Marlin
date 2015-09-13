@@ -1,3 +1,4 @@
+//OBP test GitHub
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 // This configuration file contains the basic settings.
