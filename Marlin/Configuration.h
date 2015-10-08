@@ -354,9 +354,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
 //OBP-Z Z-OBP Z-justering
-// hvis nozzel ikke er tæt nok på plade så hæves tallet - før heatbed 246.65
+// hvis nozzel ikke er tæt nok på plade så hæves tallet (det skal være større) - før heatbed 246.65
 //hot bed:60 hotend:185 233.85
-#define MANUAL_Z_HOME_POS 233.75 // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 233.80 // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 22  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
@@ -364,9 +364,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
 #define HOMING_FEEDRATE {100*60, 100*60, 100*60, 0}  // set the homing speeds (mm/min) (derated from 9000 to 6000)
 
-//OBP skal hotend længere ned efter auto probe så skal tallet være større fx. -5.20 før heatbed -3.90
+//OBP skal hotend længere ned efter auto probe så skal det negative tal være større fx. -5.20 før heatbed -3.90
 //Sept. 2015 -4.15
-#define Z_PROBE_OFFSET {-1.40, 15.00, -4.10, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. // T3P3. defaults {0, 13, -7.15, 0 }
+#define Z_PROBE_OFFSET {-1.40, 15.00, -4.05, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. // T3P3. defaults {0, 13, -7.15, 0 }
 
 // default settings
 //OBP målt sat til PLA - extruder hastigheder
