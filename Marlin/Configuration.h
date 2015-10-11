@@ -87,8 +87,8 @@
 #define DELTA_DIAGONAL_ROD 214.8 // mm (T3P3, default 215)
 
 // Horizontal offset from middle of printer to smooth rod center.
-//OBP ændret ved heatbed kalibrering
-#define DELTA_SMOOTH_ROD_OFFSET 144.80 // mm  (T3P3, default 145) //145.1 = redkossel
+//OBP ændret ved heatbed kalibrering  og ændret 9/11-15 fra 144.80 144.90
+#define DELTA_SMOOTH_ROD_OFFSET 144.70 // mm  (T3P3, default 145) //145.1 = redkossel
 
 // Horizontal offset of the universal joints on the end effector.
 #define DELTA_EFFECTOR_OFFSET 19.9 // mm (T3P3, default 19.9)
@@ -356,7 +356,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //OBP-Z Z-OBP Z-justering
 // hvis nozzel ikke er tæt nok på plade så hæves tallet (det skal være større) - før heatbed 246.65
 //hot bed:60 hotend:185 233.85
-#define MANUAL_Z_HOME_POS 233.80 // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 233.55 // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 22  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
@@ -365,8 +365,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define HOMING_FEEDRATE {100*60, 100*60, 100*60, 0}  // set the homing speeds (mm/min) (derated from 9000 to 6000)
 
 //OBP skal hotend længere ned efter auto probe så skal det negative tal være større fx. -5.20 før heatbed -3.90
-//Sept. 2015 -4.15
-#define Z_PROBE_OFFSET {-1.40, 15.00, -4.05, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. // T3P3. defaults {0, 13, -7.15, 0 }
+//Sept. 2015 -4.15 10/10-15 ændret frea -4.00
+#define Z_PROBE_OFFSET {-1.40, 15.00, -4.10, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. // T3P3. defaults {0, 13, -7.15, 0 }
 
 // default settings
 //OBP målt sat til PLA - extruder hastigheder
@@ -398,10 +398,11 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable eeprom support
-#define EEPROM_SETTINGS // T3P3 default is off during calibration. Turn on afterwards if preferred.
+//EEPROM-OBP
+//#define EEPROM_SETTINGS // T3P3 default is off during calibration. Turn on afterwards if preferred.
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
-#define EEPROM_CHITCHAT // T3P3 default is off during calibration. Turn on afterwards if preferred.
+//#define EEPROM_CHITCHAT // T3P3 default is off during calibration. Turn on afterwards if preferred.
 
  //Filament management (added by T3P3 based on https://github.com/lajos/Marlin/blob/tantillus/Marlin)
 #define EASY_LOAD					
