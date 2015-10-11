@@ -331,8 +331,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define Z_HOME_DIR 1
 
 //OBP Sætte til false for at kunne arbejde med Z offset M206 og derved nemt ændre Z0 højde
-#define min_software_endstops true // If true, axis won't move to coordinates less than HOME_POS.
-#define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
+#define min_software_endstops false // If true, axis won't move to coordinates less than HOME_POS.
+#define max_software_endstops false  // If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
 #define X_MAX_POS 90 // T3P3, default 90
 #define X_MIN_POS -90 // T3P3, default -90
@@ -354,10 +354,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
 //OBP-Z Z-OBP Z-justering
-// hvis nozzel ikke er tæt nok på plade så hæves tallet (det skal være større) - før heatbed 246.65
-//hot bed:60 hotend:185 233.85
-#define MANUAL_Z_HOME_POS 233.55 // For delta: Distance between nozzle and print surface after homing.
-
+// hvis nozzel ikke er tæt nok på plade så hæves tallet (det skal være større)
+//#define MANUAL_Z_HOME_POS 233.55 //Korrekt værdi uden brug af EEprom home-offset. For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 223.55
 #define AUTOLEVEL_GRID 22  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
 //// MOVEMENT SETTINGS
@@ -399,10 +398,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable eeprom support
 //EEPROM-OBP
-//#define EEPROM_SETTINGS // T3P3 default is off during calibration. Turn on afterwards if preferred.
+#define EEPROM_SETTINGS // T3P3 default is off during calibration. Turn on afterwards if preferred.
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
-//#define EEPROM_CHITCHAT // T3P3 default is off during calibration. Turn on afterwards if preferred.
+#define EEPROM_CHITCHAT // T3P3 default is off during calibration. Turn on afterwards if preferred.
 
  //Filament management (added by T3P3 based on https://github.com/lajos/Marlin/blob/tantillus/Marlin)
 #define EASY_LOAD					
