@@ -83,12 +83,15 @@
 #define DELTA_SEGMENTS_PER_SECOND 200
 
 // Center-to-center distance of the holes in the diagonal push rods.
-//OBP
-#define DELTA_DIAGONAL_ROD 214.8 // mm (T3P3, default 215)
+//Hvis et object 2x2x100 ikke måler 100 mm så beregn saaledes:
+//new DELTA_DIAGONAL_ROD = 100 / measured_length * original DELTA_DIAGONAL_ROD
+//OBP 14/10-2015 214.80 har været helt nede på 214.50
+#define DELTA_DIAGONAL_ROD 215.00 // mm (T3P3, default 215)
 
 // Horizontal offset from middle of printer to smooth rod center.
-//OBP ændret ved heatbed kalibrering  og ændret 9/11-15 fra 144.80 144.90
-#define DELTA_SMOOTH_ROD_OFFSET 144.70 // mm  (T3P3, default 145) //145.1 = redkossel
+//For at printe flat. Hvis form som skål (midt=z0 dybest, længst nede) så skal tallet være højere end 145.00
+//OBP ændret ved heatbed kalibrering  og ændret 9/11-15 fra 144.80 144.90 14/10-15 144.70
+#define DELTA_SMOOTH_ROD_OFFSET 144.75  // mm  (T3P3, default 145) //145.1 = redkossel
 
 // Horizontal offset of the universal joints on the end effector.
 #define DELTA_EFFECTOR_OFFSET 19.9 // mm (T3P3, default 19.9)
